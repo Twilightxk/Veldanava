@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <link href="./cms.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chúc Mừng Sinh Nhật Đàm Việt Lăng</title>
+  </head>
+  <body>
+    <h1>Chúc Mừng Sinh Nhật Đàm Việt Lăng!</h1>
+    <p>
+      Chúc bạn có một ngày sinh nhật thật vui vẻ, hạnh phúc và ngập tràn yêu
+      thương!
+    </p>
+
+    <div class="image-container">
+      <img
+        src="./baitap/ảnh/z6172404961596_b63ffe28e070c1e0bce1dde2695c12ed.jpg"
+        width="250"
+        alt="Ảnh của Đàm Việt Lăng"
+      />
+    </div>
+    <p><strong> Mở đê</strong></p>
+    <div class="gift-box" id="gift-box">
+      <div class="lid"></div>
+      <div class="cake" id="cake"></div>
+    </div>
+
+    <div class="audio-player">
+      <audio controls autoplay>
+        <source
+          src="./baitap/ảnh/ChucMungSinhNhat-PhanDinhTung-2804028.mp3"
+          type="audio/mp3"
+        />
+        Trình duyệt của bạn không hỗ trợ phát âm thanh.
+      </audio>
+    </div>
+
+    <!-- Pháo -->
+    <div class="fireworks" style="left: 20%"></div>
+    <div class="fireworks" style="left: 40%"></div>
+    <div class="fireworks" style="left: 60%"></div>
+    <div class="fireworks" style="left: 80%"></div>
+
+    <script>
+      // JavaScript để mở hộp quà và hiển thị bánh sinh nhật
+      document
+        .getElementById("gift-box")
+        .addEventListener("click", function () {
+          this.classList.add("open");
+          setTimeout(function () {
+            document.getElementById("cake").style.display = "block";
+          }, 500); // Sau khi hộp quà mở, sẽ hiển thị bánh
+        });
+
+      // Tạo hiệu ứng pháo bắn
+      setInterval(function () {
+        let newFirework = document.createElement("div");
+        newFirework.classList.add("fireworks");
+        newFirework.style.left = `${Math.random() * 100}%`;
+        document.body.appendChild(newFirework);
+
+        setTimeout(function () {
+          newFirework.remove();
+        }, 1000); // Pháo bắn tồn tại 1s
+      }, 300);
+    </script>
+  </body>
+</html>
